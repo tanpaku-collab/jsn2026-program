@@ -332,7 +332,7 @@ function renderCard(p, conflicts = new Set()) {
       <span class="font-medium text-gray-800 text-sm">${escHtml(pr.name)}</span>
       ${badge}
       ${loc ? '<span class="text-xs text-gray-500 whitespace-nowrap">' + escHtml(loc) + '</span>' : ''}
-      ${affil ? '<span class="text-xs text-gray-400 hidden sm:inline">(' + affil + ')</span>' : ''}
+      ${affil ? '<span class="text-xs text-gray-400 break-words">(' + affil + ')</span>' : ''}
     </span>`;
   }).join('<span class="text-gray-300 mx-1">·</span>');
 
