@@ -338,7 +338,7 @@ function renderCard(p, conflicts = new Set()) {
 
   const borderClass = hasConflict ? 'border-red-300 bg-red-50' : inSchedule ? 'border-yellow-300 bg-yellow-50' : 'border-gray-200 bg-white';
   return `
-    <div class="${borderClass} border rounded-xl p-4 card-hover" data-id="${p.id}">
+    <div class="${borderClass} border rounded-xl p-3 sm:p-4 card-hover overflow-hidden" data-id="${p.id}">
       <div class="flex items-start gap-2">
         <button data-schedule-btn="${p.id}" onclick="toggleSchedule('${p.id}')"
           title="${inSchedule ? 'スケジュールから削除' : 'マイスケジュールに追加'}"
@@ -352,7 +352,7 @@ function renderCard(p, conflicts = new Set()) {
             <span class="text-xs text-gray-400">${timeStr} ${roomStr}</span>
             ${hasConflict ? '<span class="text-xs text-red-500 font-medium">⚠️ 時間が重複</span>' : ''}
           </div>
-          <p class="text-sm font-semibold text-gray-800 leading-snug mb-2">${escHtml(p.title)}</p>
+          <p class="text-sm font-semibold text-gray-800 leading-snug mb-2 break-words">${escHtml(p.title)}</p>
           <div class="text-sm flex flex-wrap items-center gap-1.5">
             <span class="text-xs text-gray-400">演者：</span>
             ${presenterHtml || '<span class="text-xs text-gray-300">（演者情報なし）</span>'}
