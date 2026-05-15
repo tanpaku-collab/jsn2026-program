@@ -341,7 +341,7 @@ function renderCard(p, conflicts = new Set()) {
   const presenterHtml = p.presenters.map(pr => {
     const badge = matchBadge(pr.matchMethod);
     const loc = [pr.prefecture, pr.city].filter(Boolean).join(' ');
-    const affil = escHtml(pr.affiliationNormalized || pr.affiliationRaw || '').substring(0, 30);
+    const affil = escHtml(pr.affiliationNormalized || pr.affiliationRaw || '');
     return `<span class="inline-flex items-center gap-1 flex-wrap">
       <span class="font-medium text-gray-800 text-sm">${escHtml(pr.name)}</span>
       ${badge}
