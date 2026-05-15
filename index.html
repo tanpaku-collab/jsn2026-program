@@ -189,7 +189,8 @@ function roomNumber(room) {
 // ============================================================
 let currentPresentations = [];
 let isScheduleView = false;
-window._allPresentations = window.PRESENTATIONS_DATA || [];
+// withdrawn（演者なし）を除外
+window._allPresentations = (window.PRESENTATIONS_DATA || []).filter(p => p.presenters && p.presenters.length > 0 && p.presenters[0].name);
 let mySchedule = new Set(JSON.parse(localStorage.getItem('mySchedule') || '[]'));
 
 // ============================================================
